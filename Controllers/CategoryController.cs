@@ -24,6 +24,7 @@ namespace net_api_swagger.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> Get()
         {
+            await Task.Delay(5000);
             return await _dbContext.Category.AsNoTracking().ToListAsync();
         }
         [HttpPost]

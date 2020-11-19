@@ -22,6 +22,7 @@ namespace net_api_swagger.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Brand>>> Get()
         {
+            await Task.Delay(5000);
             return await _dbContext.Brand.AsNoTracking().ToListAsync();
         }
         [HttpPost]
